@@ -1,10 +1,10 @@
 /*
 El siguiente grupo de clases modela un dominio de un transporte aereo.
 1. Analice el problema.
-2. Identifique potenciales problemas con el diseño/código presentado e indique porque considera que son problemas.
-3. Proponga y codifique una solución para cada uno de los puntos identificados.
+2. Identifique potenciales problemas con el diseï¿½o/cï¿½digo presentado e indique porque considera que son problemas.
+3. Proponga y codifique una soluciï¿½n para cada uno de los puntos identificados.
 4. Realice un diagrama de clases
-5. Realice un diagrama de secuencia del método 'cobrarPasaje' de la clase TransporteAeropuerto.
+5. Realice un diagrama de secuencia del mï¿½todo 'cobrarPasaje' de la clase TransporteAeropuerto.
 */
 public class TransporteAeropuerto {
 	
@@ -23,23 +23,23 @@ public class TransporteAeropuerto {
 		}else{
 			if(this.tipoTransporte == "Minibus")
 			{
-				if(origen == "Terminal A" && origen == "Terminal A")
+				if(origen == "Terminal A" && destino == "Terminal A")
 					return 0;
-				if(origen == "Terminal A" && origen == "Terminal B")
+				if(origen == "Terminal A" && destino == "Terminal B")
 					return 5;
-				if(origen == "Terminal A" && origen == "Terminal C")
+				if(origen == "Terminal A" && destino == "Terminal C")
 					return 10;
-				if(origen == "Terminal B" && origen == "Terminal A")
+				if(origen == "Terminal B" && destino == "Terminal A")
 					return 5;
-				if(origen == "Terminal B" && origen == "Terminal B")
+				if(origen == "Terminal B" && destino == "Terminal B")
 					return 0;
-				if(origen == "Terminal B" && origen == "Terminal C")
+				if(origen == "Terminal B" && destino == "Terminal C")
 					return 5;
-				if(origen == "Terminal C" && origen == "Terminal A")
+				if(origen == "Terminal C" && destino == "Terminal A")
 					return 10;
-				if(origen == "Terminal C" && origen == "Terminal B")
+				if(origen == "Terminal C" && destino == "Terminal B")
 					return 5;
-				if(origen == "Terminal C" && origen == "Terminal C")
+				if(origen == "Terminal C" && destino == "Terminal C")
 					return 0;
 			}else{
 				if(this.tipoTransporte == "Coche Privado"){
