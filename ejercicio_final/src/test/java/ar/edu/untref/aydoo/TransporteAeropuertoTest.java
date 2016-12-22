@@ -9,5 +9,12 @@ public class TransporteAeropuertoTest {
 
 		Assert.assertTrue(transporteAeroportuario.cobrarPasaje("Terminal A", "Terminal B", 2) == 0);
 	}
+	
+	@Test
+	public void TransporteAeropuertoSiEsMinibus(){
+		TransporteAeropuerto transporteMinibus = new TransporteAeropuerto("Minibus");
+
+		Assert.assertTrue(transporteMinibus.cobrarPasaje("Terminal A", "Terminal A", 3) == 0);
+	}
 
 }
