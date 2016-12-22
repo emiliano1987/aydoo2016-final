@@ -16,5 +16,12 @@ public class TransporteAeropuertoTest {
 
 		Assert.assertTrue(transporteMinibus.cobrarPasaje("Terminal A", "Terminal A", 3) == 0);
 	}
+	
+	@Test
+	public void TransporteAeropuertoSiEsMinibusEnDiferentesTerminales(){
+		TransporteAeropuerto transporteMinibus = new TransporteAeropuerto("Minibus");
+
+		Assert.assertTrue(transporteMinibus.cobrarPasaje("Terminal A", "Terminal B", 2) == 5);
+	}
 
 }
