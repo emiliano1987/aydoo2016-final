@@ -5,55 +5,42 @@ El siguiente grupo de clases modela un dominio de un transporte aereo.
 3. Proponga y codifique una soluci�n para cada uno de los puntos identificados.
 4. Realice un diagrama de clases
 5. Realice un diagrama de secuencia del m�todo 'cobrarPasaje' de la clase TransporteAeropuerto.
-*/
+ */
 public class TransporteAeropuerto {
-	
+
 	private String tipoTransporte;
 	private Transporte nuevoTransporte;
 
 	public TransporteAeropuerto(String tipoTransporte){
 		this.tipoTransporte = tipoTransporte;
 	}
-	
-	
+
+
 	public float cobrarPasaje(String origen, String destino, int cantidadPasajeros){
-		if(this.tipoTransporte == "Tren Interno")
-		{
+		if(this.tipoTransporte == "Tren Interno"){
+
 			this.nuevoTransporte = new TrenInterno();
 			return this.nuevoTransporte.cobrarPasajeSegunTransporte(origen, destino, cantidadPasajeros);
-			
+
 		}else{
-			if(this.tipoTransporte == "Minibus")
-			{
+
+			if(this.tipoTransporte == "Minibus"){
+
 				this.nuevoTransporte = new Minibus();
 				return this.nuevoTransporte.cobrarPasajeSegunTransporte(origen, destino, cantidadPasajeros);
+
 			}else{
+				
 				if(this.tipoTransporte == "Coche Privado"){
-					if(this.calcularKilometros(origen,destino) < 2){
-						return 10 * cantidadPasajeros * 1.21f; //Se cobra un 21% de IVA.
-					}
-					if(this.calcularKilometros(origen,destino) >= 2 && this.calcularKilometros(origen,destino) < 4){
-						return 20 * cantidadPasajeros * 1.21f;
-					}
-					if(this.calcularKilometros(origen,destino) >= 4){
-						return 20 * cantidadPasajeros * 1.21f * 1.2f;//Se cobra un 20% mas por ser lejos.
-					}
+				
+					this.nuevoTransporte = new CochePrivado();
+					return this.nuevoTransporte.cobrarPasajeSegunTransporte(origen, destino, cantidadPasajeros);
+				
 				}
 			}
 			return 0;
 		}
 	}
-	
-	private float calcularKilometros(String origen, String destino){
-		
-		if(origen == destino)
-			return 0f;
-		if((origen == "Terminal A" && destino == "Terminal B") || 
-		   (origen == "Terminal B" && destino == "Terminal A") ||
-		   (origen == "Terminal B" && destino == "Terminal C") ||
-		   (origen == "Terminal C" && destino == "Terminal B"))
-			return 3f;
-		else
-			return 5f;
-	}
+
+
 }
