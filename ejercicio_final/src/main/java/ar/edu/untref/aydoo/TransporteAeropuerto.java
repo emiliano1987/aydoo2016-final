@@ -25,24 +25,8 @@ public class TransporteAeropuerto {
 		}else{
 			if(this.tipoTransporte == "Minibus")
 			{
-				if(origen == "Terminal A" && destino == "Terminal A")
-					return 0;
-				if(origen == "Terminal A" && destino == "Terminal B")
-					return 5;
-				if(origen == "Terminal A" && destino == "Terminal C")
-					return 10;
-				if(origen == "Terminal B" && destino == "Terminal A")
-					return 5;
-				if(origen == "Terminal B" && destino == "Terminal B")
-					return 0;
-				if(origen == "Terminal B" && destino == "Terminal C")
-					return 5;
-				if(origen == "Terminal C" && destino == "Terminal A")
-					return 10;
-				if(origen == "Terminal C" && destino == "Terminal B")
-					return 5;
-				if(origen == "Terminal C" && destino == "Terminal C")
-					return 0;
+				this.nuevoTransporte = new Minibus();
+				return this.nuevoTransporte.cobrarPasajeSegunTransporte(origen, destino, cantidadPasajeros);
 			}else{
 				if(this.tipoTransporte == "Coche Privado"){
 					if(this.calcularKilometros(origen,destino) < 2){
