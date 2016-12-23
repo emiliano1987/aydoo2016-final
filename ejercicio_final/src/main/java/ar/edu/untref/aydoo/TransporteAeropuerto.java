@@ -9,17 +9,19 @@ El siguiente grupo de clases modela un dominio de un transporte aereo.
 public class TransporteAeropuerto {
 	
 	private String tipoTransporte;
-	
+	private Transporte nuevoTransporte;
+
 	public TransporteAeropuerto(String tipoTransporte){
 		this.tipoTransporte = tipoTransporte;
 	}
 	
 	
 	public float cobrarPasaje(String origen, String destino, int cantidadPasajeros){
-		
 		if(this.tipoTransporte == "Tren Interno")
 		{
-			return 0; //El tren internos es un servicio gratis del aeropuesro.
+			this.nuevoTransporte = new TrenInterno();
+			return this.nuevoTransporte.cobrarPasajeSegunTransporte(origen, destino, cantidadPasajeros);
+			
 		}else{
 			if(this.tipoTransporte == "Minibus")
 			{
