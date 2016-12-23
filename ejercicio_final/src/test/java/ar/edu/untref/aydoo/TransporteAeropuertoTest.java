@@ -53,7 +53,7 @@ public class TransporteAeropuertoTest {
 	}
 	
 	@Test
-	public void TransporteCobra10SiEsMinibusEnTerminalesByC(){
+	public void TransporteCobra5SiEsMinibusEnTerminalesByC(){
 		TransporteAeropuerto transporteMinibus = new TransporteAeropuerto("Minibus");
 
 		Assert.assertTrue(transporteMinibus.cobrarPasaje("Terminal B", "Terminal C", 4) == 5);
@@ -64,6 +64,13 @@ public class TransporteAeropuertoTest {
 		TransporteAeropuerto transporteMinibus = new TransporteAeropuerto("Minibus");
 
 		Assert.assertTrue(transporteMinibus.cobrarPasaje("Terminal C", "Terminal A", 5) == 10);
+	}
+	
+	@Test
+	public void TransporteCobra5SiEsMinibusEnTerminalesCyB(){
+		TransporteAeropuerto transporteMinibus = new TransporteAeropuerto("Minibus");
+
+		Assert.assertTrue(transporteMinibus.cobrarPasaje("Terminal C", "Terminal B", 10) == 5);
 	}
 	
 	@Test
@@ -85,4 +92,5 @@ public class TransporteAeropuertoTest {
 
 		Assert.assertTrue(transporteCochePrivado.cobrarPasaje("Terminal A", "Terminal C", 100) == 2904);
 	}
+
 }
