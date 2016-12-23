@@ -92,5 +92,11 @@ public class TransporteAeropuertoTest {
 
 		Assert.assertTrue(transporteCochePrivado.cobrarPasaje("Terminal A", "Terminal C", 100) == 2904);
 	}
+	
+	@Test
+	public void TransporteCobra0SiNoEsUnTransporteEspecifico(){
+		TransporteAeropuerto remis = new TransporteAeropuerto("Remis");
 
+		Assert.assertTrue(remis.cobrarPasaje("Terminal A", "Terminal A", 3) == 0);
+	}
 }
