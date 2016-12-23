@@ -11,14 +11,21 @@ public class TransporteAeropuertoTest {
 	}
 
 	@Test
-	public void TransporteCobra0SiEsMinibusEnTerminalesIguales(){
+	public void TransporteCobra0SiEsMinibusEnTerminalesOrigenYDestinoA(){
 		TransporteAeropuerto transporteMinibus = new TransporteAeropuerto("Minibus");
 
 		Assert.assertTrue(transporteMinibus.cobrarPasaje("Terminal A", "Terminal A", 3) == 0);
 	}
 
 	@Test
-	public void TransporteCobra5SiEsMinibusEnDiferentesTerminales(){
+	public void TransporteCobra0SiEsMinibusEnTerminalesOrigenYDestinoB(){
+		TransporteAeropuerto transporteMinibus = new TransporteAeropuerto("Minibus");
+
+		Assert.assertTrue(transporteMinibus.cobrarPasaje("Terminal B", "Terminal B", 3) == 0);
+	}
+	
+	@Test
+	public void TransporteCobra5SiEsMinibusEnTerminalesAYB(){
 		TransporteAeropuerto transporteMinibus = new TransporteAeropuerto("Minibus");
 
 		Assert.assertTrue(transporteMinibus.cobrarPasaje("Terminal A", "Terminal B", 2) == 5);
