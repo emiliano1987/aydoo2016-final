@@ -14,11 +14,9 @@ public class TerminalA implements TerminalesTransporte {
 
 			}
 		}else{
-
 			proximo.verificarTerminal(terminalOrigen,terminalDestino);
 
 		}
-
 	}
 
 	public TerminalesTransporte obtenerProximo(){

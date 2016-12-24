@@ -26,8 +26,6 @@ public class CentroDeTerminales implements TerminalesTransporte {
 		if(proximo.obtenerImporte() > 0){
 			this.modificarImporte(proximo.obtenerImporte());
 		}
-
-
 	}
 
 	public TerminalesTransporte obtenerProximo(){

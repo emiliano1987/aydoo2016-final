@@ -18,15 +18,17 @@ public class CochePrivado extends Transporte{
 	
 	private float calcularKilometros(String origen, String destino){
 		
-		if(origen == destino)
+		if(origen == destino){
 			return 0f;
+		}
 		if((origen == "Terminal A" && destino == "Terminal B") || 
 		   (origen == "Terminal B" && destino == "Terminal A") ||
 		   (origen == "Terminal B" && destino == "Terminal C") ||
-		   (origen == "Terminal C" && destino == "Terminal B"))
+		   (origen == "Terminal C" && destino == "Terminal B")){
 			return 3f;
-		else
+		}else{
 			return 5f;
+		}
 	}
 
 }

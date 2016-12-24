@@ -14,7 +14,6 @@ public class TerminalC implements TerminalesTransporte {
 
 			}
 		}
-
 	}
 
 	public TerminalesTransporte obtenerProximo(){
@@ -32,5 +31,5 @@ public class TerminalC implements TerminalesTransporte {
 	public void modificarProximo(TerminalesTransporte nuevaTerminal){
 		proximo = nuevaTerminal;
 	}
-
+	
 }

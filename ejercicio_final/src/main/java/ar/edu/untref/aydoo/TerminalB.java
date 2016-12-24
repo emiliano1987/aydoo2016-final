@@ -10,7 +10,6 @@ public class TerminalB implements TerminalesTransporte {
 				this.modificarImporte(5);
 			}
 		}else{
-
 			proximo.verificarTerminal(terminalOrigen,terminalDestino);
 
 		}
