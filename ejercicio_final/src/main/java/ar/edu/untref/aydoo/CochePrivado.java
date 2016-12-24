@@ -3,17 +3,15 @@ public class CochePrivado extends Transporte{
 
 	@Override
 	public float cobrarPasajeSegunTransporte(String origen, String destino, int cantidadPasajeros){
-		if(this.calcularKilometros(origen,destino) < 2){
-			return 10 * cantidadPasajeros * 1.21f; //Se cobra un 21% de IVA.
-		}
+
 		if(this.calcularKilometros(origen,destino) >= 2 && this.calcularKilometros(origen,destino) < 4){
 			return 20 * cantidadPasajeros * 1.21f;
 		}
 		if(this.calcularKilometros(origen,destino) >= 4){
 			return 20 * cantidadPasajeros * 1.21f * 1.2f;//Se cobra un 20% mas por ser lejos.
 		}
-		
-		return 0;
+
+		return 10 * cantidadPasajeros * 1.21f; //Se cobra un 21% de IVA.
 	}
 	
 	private float calcularKilometros(String origen, String destino){
