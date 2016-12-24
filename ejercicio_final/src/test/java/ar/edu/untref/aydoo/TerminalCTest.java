@@ -19,4 +19,14 @@ public class TerminalCTest {
 		Assert.assertTrue(nuevaTerminal.obtenerImporte() == 5);
 	}
 	
+	@Test
+	public void verificarTerminalDestinoC(){
+		TerminalC nuevaTerminal = new TerminalC();
+		nuevaTerminal.verificarTerminal("Terminal C","Terminal C");
+
+		Assert.assertTrue(nuevaTerminal.obtenerImporte() == 0);
+
+	}
+	
+
 }
