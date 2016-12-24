@@ -3,12 +3,10 @@ public class Minibus extends Transporte{
 
 	@Override
 	public float cobrarPasajeSegunTransporte(String origen, String destino, int cantidadPasajeros){
-		if(origen == "Terminal A" && destino == "Terminal A")
-			return 0;
-		if(origen == "Terminal A" && destino == "Terminal B")
-			return 5;
-		if(origen == "Terminal A" && destino == "Terminal C")
-			return 10;
+		CentroDeTerminales nuevoCentro = new CentroDeTerminales();
+		if(origen == "Terminal A"){
+			nuevoCentro.verificarTerminal(destino);
+		}
 		if(origen == "Terminal B" && destino == "Terminal A")
 			return 5;
 		if(origen == "Terminal B" && destino == "Terminal B")
@@ -21,7 +19,8 @@ public class Minibus extends Transporte{
 			return 5;
 		if(origen == "Terminal C" && destino == "Terminal C")
 			return 0;
-		else
-			return 0;
+		else{
+			return nuevoCentro.obtenerImporte();
+		}
 	}
 }
