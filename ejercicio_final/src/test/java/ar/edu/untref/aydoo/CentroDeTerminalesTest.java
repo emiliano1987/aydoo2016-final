@@ -29,5 +29,17 @@ public class CentroDeTerminalesTest {
 		Assert.assertTrue(nuevoCentro.obtenerImporte() == 10);
 
 	}
+	
+	@Test
+	public void verificarModificacionEnCentroTerminales(){
+		CentroDeTerminales nuevoCentro = new CentroDeTerminales();
+		CentroDeTerminales nuevoCentro2 = new CentroDeTerminales();
+
+		nuevoCentro.modificarProximo(nuevoCentro2);
+
+		Assert.assertTrue(nuevoCentro.obtenerProximo() == nuevoCentro2);
+
+	}
+
 
 }
