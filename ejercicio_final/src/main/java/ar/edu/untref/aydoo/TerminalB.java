@@ -1,24 +1,19 @@
 
-public class TerminalA implements TerminalesTransporte {
+public class TerminalB implements TerminalesTransporte {
 
 	private TerminalesTransporte proximo;
 	private float importe=0;
 
 	public void verificarTerminal (String terminalOrigen,String terminalDestino){
-		if(terminalOrigen.equals("Terminal A")){
-			if(terminalDestino.equals("Terminal B")){
+		if(terminalOrigen.equals("Terminal B")){
+			if(terminalDestino.equals("Terminal A")|| terminalDestino.equals("Terminal C")){
 				this.modificarImporte(5);
-
-			}else if(terminalDestino.equals("Terminal C")){
-				this.modificarImporte(10);
-
 			}
 		}else{
 
 			proximo.verificarTerminal(terminalOrigen,terminalDestino);
 
 		}
-
 	}
 
 	public TerminalesTransporte obtenerProximo(){
