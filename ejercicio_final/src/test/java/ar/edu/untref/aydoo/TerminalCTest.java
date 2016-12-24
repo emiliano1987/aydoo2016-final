@@ -11,5 +11,12 @@ public class TerminalCTest {
 		Assert.assertTrue(nuevaTerminal.obtenerImporte() == 10);
 	}
 	
+	@Test
+	public void verificarTerminalDestinoB(){
+		TerminalC nuevaTerminal = new TerminalC();
+		nuevaTerminal.verificarTerminal("Terminal C","Terminal B");
 
+		Assert.assertTrue(nuevaTerminal.obtenerImporte() == 5);
+	}
+	
 }
