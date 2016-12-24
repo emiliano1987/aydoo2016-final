@@ -28,5 +28,23 @@ public class TerminalCTest {
 
 	}
 	
+	@Test
+	public void modificarImporteDeTerminal(){
+		TerminalC nuevaTerminal = new TerminalC();
+		nuevaTerminal.verificarTerminal("Terminal C","Terminal F");
+		nuevaTerminal.modificarImporte(33);
+		Assert.assertTrue(nuevaTerminal.obtenerImporte() == 33);
 
+	}
+	
+	@Test
+	public void verificarProximaTerminal(){
+		TerminalC nuevaTerminal = new TerminalC();
+		TerminalC nuevaTerminalC = new TerminalC();
+		
+		nuevaTerminal.modificarProximo(nuevaTerminalC);
+		
+		Assert.assertTrue(nuevaTerminal.obtenerProximo()==nuevaTerminalC);
+
+	}
 }
