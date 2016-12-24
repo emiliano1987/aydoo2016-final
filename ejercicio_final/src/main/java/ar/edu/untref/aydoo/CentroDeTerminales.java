@@ -11,14 +11,23 @@ public class CentroDeTerminales implements TerminalesTransporte {
 		TerminalB nuevaTerminalOrigenB = new TerminalB ();
 		nuevaTerminalOrigen.modificarProximo(nuevaTerminalOrigenB);
 
+		TerminalC nuevaTerminalOrigenC = new TerminalC ();
+		nuevaTerminalOrigenB.modificarProximo(nuevaTerminalOrigenC);
+
 		proximo.verificarTerminal(terminalOrigen,terminalDestino);
+
 		this.modificarImporte(proximo.obtenerImporte());
 		
-		if (proximo.obtenerProximo().obtenerImporte()>0){
-			this.modificarImporte(proximo.obtenerProximo().obtenerImporte());
+		while (proximo.obtenerProximo() != null && proximo.obtenerImporte() >= this.obtenerImporte() ){
+			this.modificarImporte(proximo.obtenerImporte());
+			proximo = proximo.obtenerProximo();
+		}
+		
+		if(proximo.obtenerImporte() > 0){
+			this.modificarImporte(proximo.obtenerImporte());
 		}
 
-		
+
 	}
 
 	public TerminalesTransporte obtenerProximo(){
